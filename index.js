@@ -1,16 +1,13 @@
-const obj1 = {
-  name: "Code Malayalam",
-  place: "kerala",
-};
-const obj2 = {
-  name: "Bob",
-  place: "America",
-};
+const arr = [
+  { name: "Alice", mark: 35, place: "Kannur" },
+  { name: "Bob", mark: 28, place: "Palakkad" },
+  { name: "Catherine", mark: 44, place: "Trissur" },
+  { name: "Daniel", mark: 23, place: "Kollam" },
+];
 
-function abc() {
-  var { name, place } = obj1;
-  var { name: name2, place: place2 } = obj2;
-  console.log(name, place, name2, place2);
-}
+var value = arr.reduce((total, item) => {
+  total.push(item.name);
+  return total;
+}, []);
 
-abc();
+console.log(value);
