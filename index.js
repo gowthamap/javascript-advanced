@@ -1,21 +1,16 @@
-const myObj = {
-  a: 1,
-  b: 2,
-  c: function (a, b) {
-    console.log(this, a, b);
-  },
-};
-
-var k = myObj.c;
-k.apply(myObj, [1, 2]);
-
-class MyClass {
-  myFunction = () =>  {
-    console.log(this);
+function one() {
+  var a = {
+    value: 100,
   }
+  two(a);
+  console.log("one", a.value);
 }
 
-const myc = new MyClass();
-myc.myFunction()
-const k = myc.myFunction;
-k()
+function two(a) {
+  a = {
+    value: 400
+  };
+  console.log("two", a.value);
+}
+
+one();
