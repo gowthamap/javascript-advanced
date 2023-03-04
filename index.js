@@ -1,55 +1,40 @@
-// function add(a, b) {
-//   function myAdd() {
-//     const c = a + b;
-//     return c;
-//   }
-//   return myAdd;
-// }
+var objA = {
+  a: 1,
+  b: 2,
+  c: "Hello",
+};
 
-// function main() {
-//   const res = add(3, 4);
-//   const val = res();
-//   console.dir(res);
-// }
+var objB = {
+  a1: 1,
+  b1: 2,
+  c1: "Hello 2 ",
+};
 
-// main();
+var obj2 = { ...objA, ...objB, z:32 };
 
-// function main(a) {
-//   [1, 2, 3, 4, 5].forEach(function (i) {
-//     console.log(i, a);
-//   });
-// }
+console.log(obj2);
 
-// main(10);
+var a = [1, 2, 3, 4];
+var b = [6,7,8,9]
+var c = [...a, ...b]
 
-var objs = [
-  {
-    name: "One",
-    msg: "Hello I am one",
-  },
-  {
-    name: "Two",
-    msg: "Hello I am Two",
-  },
-  {
-    name: "Three",
-    msg: "Hello I am Three",
-  },
-];
+console.log(c);
 
-function main() {
-  objs.forEach((item) => {
-    const bt = document.createElement("button");
-    bt.innerHTML = item.name;
-    bt.onclick = getCallBack(item.msg);
-    document.body.appendChild(bt);
-  });
-
-  function getCallBack(arg) {
-    return function () {
-      alert(arg);
-    };
+var obj1 = {
+  a: 1,
+  b: 2,
+  c : {
+    name: 'raman',
+    age: 45
   }
-}
+};
 
-main();
+var obj2 = {...obj1}
+
+obj1.d = 44
+obj1.c.name = 'krishnan'
+console.log(obj1 , obj2);
+
+var arr = [1, 2, 33, 49, 15, 6];
+var a = Math.max(...arr);
+console.log(a);
