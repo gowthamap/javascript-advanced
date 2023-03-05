@@ -1,35 +1,60 @@
-class Student {
-  name;
-  yob;
-  place;
-  constructor(name, yob) {
-    this.name = name;
-    this.yob = yob;
-  }
+// class Button {
+//   constructor(name) {
+//     this.button = document.createElement("button");
+//     this.button.innerHTML = name;
+//     document.body.appendChild(this.button);
+//   }
 
-  getAge() {
-    return new Date().getFullYear() - this.yob;
-  }
-  getName() {
-    return this.name;
-  }
-}
+//   set width(width) {
+//     this.button.style.width = width + "px";
+//   }
 
-Student.printMinYob = function(...args) {
-  var arr = args.map((item) => item.yob);
-  console.log(Math.min(...arr));
-}
+//   set height(height) {
+//     this.button.style.height = height + "px";
+//   }
 
-var student1 = new Student("Alen", 1990);
+//   get width() {
+//     return parseInt(this.button.style.width, 10);
+//   }
 
-var student2 = new Student("Bob", 1995);
+//   get height() {
+//     return parseInt(this.button.style.height, 10);
+//   }
+// }
 
-var student3 = new Student("Cook", 1980);
+var b1 = {
 
-console.log(student1,student1.getName(), student1.getAge());
-console.log(student2,student2.getName(), student2.getAge());
-console.log(student3,student3.getName(), student3.getAge());
+  init(name) {
+    this.button = document.createElement("button");
+    this.button.innerHTML = name;
+    document.body.appendChild(this.button);
+  },
 
-Student.printMinYob(student1, student2, student3)
+  set width(width) {
+    this.button.style.width = width + "px";
+  },
 
- 
+  set height(height) {
+    this.button.style.height = height + "px";
+  },
+
+  get width() {
+    return parseInt(this.button.style.width, 10);
+  },
+
+  get height() {
+    return parseInt(this.button.style.height, 10);
+  },
+};
+
+b1.init('click')
+b1.width = 100;
+b1.height = 100;
+
+// var b1 = new Button("Click Me!");
+// b1.width = 100;
+// b1.height = 100;
+// console.log(b1.width, b1.height);
+
+// b1.setWidth(100)
+// b1.setHeight(100)
