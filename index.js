@@ -1,25 +1,11 @@
-class Button {
-  constructor(name) {
-    this.button = document.createElement("button");
-    this.button.innerHTML = name;
-    document.body.appendChild(this.button);
-  }
+var button = document.getElementById("mybutton");
+button.onclick = () => {
+  console.log("started click event");
 
-  onClick(fn) {
-    this.button.onclick = fn;
-  }
-}
+  var arr = [1, 2, 3, 4, 5];
+  arr.forEach((item) => {
+    console.log(item);
+  });
 
-class GreenButton extends Button {
-  onClick(fn) {
-    this.button.onclick = function () {
-      this.button.style.background = "green";
-      fn();
-    }.bind(this);
-  }
-}
-
-var b1 = new GreenButton("GButton");
-b1.onClick(function () {
-  console.log("clicked");
-});
+  console.log("ended click event");
+};
